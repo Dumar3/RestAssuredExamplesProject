@@ -1,0 +1,39 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+        dependencies {
+            classpath "gradle.plugin.com.github.sherter.google-java-format:google-java-format-gradle-plugin:0.6"
+        }
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'com.github.sherter.google-java-format'
+
+group 'AutomationProjects'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+ext{
+    restAssuredVersion = '4.1.2'
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    testCompile group: 'org.testng', name: 'testng', version: '7.0.0'
+    testCompile group: 'io.rest-assured', name: 'rest-assured', version: rootProject.ext.restAssuredVersion
+    compile group: 'io.rest-assured', name: 'json-path', version: rootProject.ext.restAssuredVersion
+    compile group: 'io.rest-assured', name: 'json-schema-validator', version: rootProject.ext.restAssuredVersion
+}
+
+wrapper {
+    gradleVersion = '4.9'
+}
