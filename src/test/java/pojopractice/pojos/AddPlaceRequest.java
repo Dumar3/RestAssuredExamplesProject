@@ -1,5 +1,5 @@
 
-package addplace;
+package pojopractice.pojos;
 
 import java.io.Serializable;
 import java.util.List;

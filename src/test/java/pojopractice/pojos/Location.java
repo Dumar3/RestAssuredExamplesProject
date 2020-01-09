@@ -1,5 +1,5 @@
 
-package addplace;
+package pojopractice.pojos;
 
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonInclude;
